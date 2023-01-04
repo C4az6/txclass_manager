@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Login from 'components/Login'
 export default class LoginPage extends Component {
   constructor(props) {
     super(props)
@@ -10,7 +10,9 @@ export default class LoginPage extends Component {
   }
   render() {
     return (
-      <h1>Login Page</h1>
+      <div>
+        <Login></Login>
+      </div>
     )
   }
 }
