@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-
-export default class IndexPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  state = {
-
-  }
-
+import React from 'react';
+import { Link } from 'react-router-dom'
+export default class IndexPage extends React.Component {
   render() {
     return (
-      <h1>Index Page</h1>
+      <div>
+        <ul>
+          <li><Link to="/sub/detail">Detail Page</Link></li>
+          <li><Link to="/sub/list">List Page</Link></li>
+        </ul>
+        Index Page.
+        {this.props.children}
+      </div>
     )
   }
 }
