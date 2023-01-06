@@ -12,24 +12,22 @@ import ListPage from './pages/sub/List'
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <Router>
-          <Switch>
-            <Route path="/about" component={About}></Route>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/" render={
-              (props) => (
-                <IndexPage history={props.history}>
-                  <Switch>
-                    <Route path="/sub/detail" component={DetailPage}></Route>
-                    <Route path="/sub/list" component={ListPage}></Route>
-                  </Switch>
-                </IndexPage>
-              )
-            }></Route>
-          </Switch>
-        </Router>
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/about" component={About}></Route>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/" render={
+            (props) => (
+              <IndexPage history={props.history}>
+                <Switch>
+                  <Route path="/sub/detail" component={DetailPage}></Route>
+                  <Route path="/sub/list" component={ListPage}></Route>
+                </Switch>
+              </IndexPage>
+            )
+          }></Route>
+        </Switch>
+      </Router>
     )
   }
 }
