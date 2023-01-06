@@ -1,5 +1,8 @@
 import React from 'react';
+
 import LoginService from '../services/Login';
+import CourseService from '../services/Course';
+
 import Header from '@/components/index/Header'
 import SideBar from '@/components/index/SideBar'
 import Container from '@/components/index/Container'
@@ -7,11 +10,27 @@ import Container from '@/components/index/Container'
 import { NAV } from '@/config/config'
 
 const loginService = new LoginService();
+const courseService = new CourseService();
 export default class IndexPage extends React.Component {
   state = {
     curIdx: 0,
     field: NAV[0].field,
     title: NAV[0].title
+  }
+
+
+  async getCourseData() {
+    const { data } = await courseService.getCourse();
+    console.log("response: ", data);
+    const { error_code } = data;
+    if (error_code === 10006) {
+      this.props.history.push('/login');
+      return
+    }
+    if (error_code === 20001) {
+      alert('获取数据失败,请检查网络状况!');
+      return
+    }
   }
 
   async login_check() {
@@ -23,7 +42,7 @@ export default class IndexPage extends React.Component {
       return;
     }
     // 登录状态下显示课程管理页
-    history.push('/course1')
+    history.push('/course')
   }
 
   onNavItemClick(dataItem, index) {
@@ -37,6 +56,7 @@ export default class IndexPage extends React.Component {
 
   componentDidMount() {
     this.login_check();
+    this.getCourseData();
   }
 
   render() {

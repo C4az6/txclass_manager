@@ -1,8 +1,13 @@
-const BASE_URL = 'http://localhost:3000/admin/'
+const BASE_URL = 'http://localhost:3000/'
 export const API = {
-  LOGIN_ACTION: BASE_URL + 'login_action',
-  LOGIN_CHECK: BASE_URL + 'login_check',
-  LOGOUT_ACTION: BASE_URL + 'logout_action'
+  LOGIN: {
+    LOGIN_ACTION: BASE_URL + 'admin/login_action',
+    LOGIN_CHECK: BASE_URL + 'admin/login_check',
+    LOGOUT_ACTION: BASE_URL + 'admin/logout_action'
+  },
+  COURSE: {
+    GET_COURSE_DATA: BASE_URL + 'get_courses'
+  }
 }
 
 export const NAV = [
