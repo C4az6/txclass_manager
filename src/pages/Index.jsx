@@ -18,21 +18,6 @@ export default class IndexPage extends React.Component {
     title: NAV[0].title
   }
 
-
-  async getCourseData() {
-    const { data } = await courseService.getCourse();
-    console.log("response: ", data);
-    const { error_code } = data;
-    if (error_code === 10006) {
-      this.props.history.push('/login');
-      return
-    }
-    if (error_code === 20001) {
-      alert('获取数据失败,请检查网络状况!');
-      return
-    }
-  }
-
   async login_check() {
     const { history } = this.props;
     const { data } = await loginService.login_check();
@@ -56,7 +41,6 @@ export default class IndexPage extends React.Component {
 
   componentDidMount() {
     this.login_check();
-    this.getCourseData();
   }
 
   render() {
