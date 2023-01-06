@@ -1,0 +1,11 @@
+.header-logout {
+  float: right;
+  line-height: 60px;
+  font-size: 12px;
+  cursor: pointer;
+  color: lightcoral;
+  &:hover {
+    color: deeppink;
+    text-decoration: underline;
+  }
+}

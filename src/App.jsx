@@ -18,8 +18,8 @@ export default class App extends React.Component {
             <Route path="/about" component={About}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/" render={
-              () => (
-                <IndexPage>
+              (props) => (
+                <IndexPage history={props.history}>
                   <Switch>
                     <Route path="/sub/detail" component={DetailPage}></Route>
                     <Route path="/sub/list" component={ListPage}></Route>
