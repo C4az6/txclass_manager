@@ -14,6 +14,20 @@ export default class LoginForm extends Component {
     }
   }
 
+  async login_check() {
+    const response = await loginService.login_check();
+    const { error_code } = response.data;
+    console.log("error_code: ", error_code);
+
+    if (error_code === 10007) {
+      // 已经是登录状态了
+      const { history } = this.props;
+      // 跳转到主页a
+      history.push('/');
+    }
+
+  }
+
   onInputTyping(e) {
     const id = e.target.id,
       val = e.target.value;
@@ -44,6 +58,11 @@ export default class LoginForm extends Component {
     // 跳转
     this.props.history.push('/')
 
+  }
+
+  componentDidMount() {
+    // 组件挂载完毕后检测登录状态
+    this.login_check();
   }
 
   render() {

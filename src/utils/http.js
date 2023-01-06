@@ -7,6 +7,8 @@ export default class HTTP {
     axios({
       url: option.url,
       method: 'post',
+      // 允许跨域携带cookie
+      withCredentials: true,
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -21,7 +23,8 @@ export default class HTTP {
 
   axiosGet(options) {
     axios({
-      url: options.url
+      url: options.url,
+      withCredentials: true
     }).then(res => {
       options.success(res)
     }).catch(err => {

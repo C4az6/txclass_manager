@@ -12,6 +12,19 @@ export default class LoginService extends HTTP {
         },
         error(err) {
           alert('网络请求失败');
+        }
+      })
+    })
+  }
+  login_check() {
+    return new Promise((resolve, reject) => {
+      this.axiosGet({
+        url: API.LOGIN_CHECK,
+        success(data) {
+          resolve(data)
+        },
+        error(err) {
+          alert('网络请求失败')
           window.location.reload();
         }
       })
