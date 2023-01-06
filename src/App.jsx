@@ -11,6 +11,7 @@ import CollectionPage from './pages/sub/Collection'
 import TeacherPage from './pages/sub/Teacher'
 import StudentPage from './pages/sub/Student'
 import CrawlerPage from './pages/sub/Crawler'
+import ErrorPage from './pages/sub/Error'
 
 
 export default class App extends React.Component {
@@ -30,6 +31,8 @@ export default class App extends React.Component {
                   <Route path="/teacher" component={TeacherPage}></Route>
                   <Route path="/student" component={StudentPage}></Route>
                   <Route path="/crawler" component={CrawlerPage}></Route>
+                  {/* React匹配路由是从上到下的，如果所有的路由都没有匹配到，那么会匹配最后一个没有path的路由，可以把这个路由用来做404*/}
+                  <Route component={ErrorPage}></Route>
                 </Switch>
               </IndexPage>
             )

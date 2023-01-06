@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import LoginService from '../services/Login';
 import Header from '@/components/index/Header'
 import SideBar from '@/components/index/SideBar'
 import Container from '@/components/index/Container'
-import CoursePage from './sub/Course'
 
 import { NAV } from '@/config/config'
 
@@ -25,7 +23,7 @@ export default class IndexPage extends React.Component {
       return;
     }
     // 登录状态下显示课程管理页
-    history.push('/course')
+    history.push('/course1')
   }
 
   onNavItemClick(dataItem, index) {

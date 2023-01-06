@@ -6,8 +6,6 @@ export default class Board extends Component {
     const { children } = this.props;
     return (
       <div className="page-board">
-        <h1>children: </h1>
-        <hr />
         {children}
       </div>
     )
