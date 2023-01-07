@@ -19,6 +19,9 @@ export const API = {
   COLLECTION: {
     GET_COLLECTION_DATA: BASE_URL + 'get_collections'
   },
+  TEACHER: {
+    GET_TEACHER_DATA: BASE_URL + 'get_teachers'
+  },
   COMMON: {
     CHANGE_STATUS: BASE_URL + 'change_status'
   }
