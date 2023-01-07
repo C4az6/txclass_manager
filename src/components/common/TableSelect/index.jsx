@@ -34,11 +34,15 @@ export default class TableSelect extends Component {
       { listShow, selectValue } = this.state
     return (
       <div className="table-select">
+        <i className="iconfont icon-arrow-down"></i>
         <div
           className="value-show"
           onClick={this.showList.bind(this)}
         >{selectValue}</div>
         <ul className={['option-list', listShow ? 'show' : ''].join(' ')}>
+          <li className='option-item' onClick={
+            this.onSelectChange.bind(this, { id: 0, title: '无分类' }, selectIndex)
+          }>无分类</li>
           {
             fieldsData.map((item, index) => {
               return (

@@ -20,4 +20,20 @@ export default class CourseService extends HTTP {
       })
     })
   }
+
+  changeCourseField(data) {
+    return new Promise((resolve, reject) => {
+      this.axiosPost({
+        url: API.COURSE.CHANGE_COURSE_FIELD,
+        data,
+        success(data) {
+          resolve(data)
+        },
+        error(error) {
+          alert('网络请求失败!');
+          reject(error)
+        }
+      })
+    })
+  }
 }

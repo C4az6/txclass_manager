@@ -7,7 +7,8 @@ export const API = {
   },
   COURSE: {
     GET_COURSE_DATA: BASE_URL + 'get_courses',
-    GET_COURSE_FIELD_DATA: BASE_URL + 'get_course_fields'
+    GET_COURSE_FIELD_DATA: BASE_URL + 'get_course_fields',
+    CHANGE_COURSE_FIELD: BASE_URL + 'change_course_field'
   }
 }
 

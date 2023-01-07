@@ -51,15 +51,24 @@ export default class Course extends Component {
     this.getCourseData();
   }
 
-  onSelectChange(data, index) {
-    console.log('__________', data, index);
+  async onSelectChange(data, index) {
     const { courseData } = this.state;
+    const cid = courseData[index].cid;
     courseData[index].field = data.id;
     courseData[index].fieldTitle = data.title;
 
     this.setState({
       courseData
     })
+    const result = await courseService.changeCourseField({
+      cid,
+      field: data.id
+    });
+    console.log('>>>>>>>>> ', result);
+    const { error_code, error_msg } = result;
+    if (error_code !== 0) {
+      return alert(error_msg)
+    }
   }
 
   componentDidMount() {
