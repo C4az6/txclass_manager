@@ -3,7 +3,6 @@ import { API } from '../config/config'
 
 export default class CommonService extends HTTP {
   changeStatus(data) {
-    console.log("data.field: ", data.field);
     return new Promise((resolve, reject) => {
       this.axiosPost({
         url: API.COMMON.CHANGE_STATUS,

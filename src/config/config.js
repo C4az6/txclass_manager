@@ -13,6 +13,9 @@ export const API = {
   RECOM_COURSE: {
     GET_RECOM_COURSE: BASE_URL + 'get_recom_courses',
   },
+  SLIDER: {
+    GET_SLIDER_DATA: BASE_URL + 'get_sliders'
+  },
   COMMON: {
     CHANGE_STATUS: BASE_URL + 'change_status'
   }
