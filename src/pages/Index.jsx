@@ -27,7 +27,7 @@ export default class IndexPage extends React.Component {
       return;
     }
     // 登录状态下显示课程管理页
-    history.push('/course')
+    // history.push('/course')
   }
 
   onNavItemClick(dataItem, index) {

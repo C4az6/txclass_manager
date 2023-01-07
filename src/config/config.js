@@ -10,6 +10,10 @@ export const API = {
     GET_COURSE_FIELD_DATA: BASE_URL + 'get_course_fields',
     CHANGE_COURSE_FIELD: BASE_URL + 'change_course_field',
     CHANGE_COURSE_STATUS: BASE_URL + 'change_course_status'
+  },
+  RECOM_COURSE: {
+    GET_RECOM_COURSE: BASE_URL + 'get_recom_courses',
+    CHANGE_RECOM_COURSE_STATUS: BASE_URL + 'change_recom_course_status'
   }
 }
 
