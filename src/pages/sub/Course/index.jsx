@@ -17,7 +17,8 @@ const courseService = new CourseService();
 export default class Course extends Component {
   state = {
     title: '课程管理',
-    courseData: []
+    courseData: [],
+    fieldsData: []
   }
 
   async getCourseData() {
@@ -40,7 +41,8 @@ export default class Course extends Component {
       })
 
       this.setState({
-        courseData
+        courseData,
+        fieldsData
       })
     });
   }
@@ -49,12 +51,23 @@ export default class Course extends Component {
     this.getCourseData();
   }
 
+  onSelectChange(data, index) {
+    console.log('__________', data, index);
+    const { courseData } = this.state;
+    courseData[index].field = data.id;
+    courseData[index].fieldTitle = data.title;
+
+    this.setState({
+      courseData
+    })
+  }
+
   componentDidMount() {
     this.getCourseData();
   }
 
   render() {
-    const { title, courseData } = this.state;
+    const { title, courseData, fieldsData } = this.state;
     return (
       <div className="list-container">
         <ListTitle title={title} onRefreshData={this.onRefreshData.bind(this)}></ListTitle>
@@ -63,7 +76,11 @@ export default class Course extends Component {
           <thead>
             <TableHead thData={COURSE_TH}></TableHead>
           </thead>
-          <TableBody courseData={courseData}></TableBody>
+          <TableBody
+            courseData={courseData}
+            fieldsData={fieldsData}
+            onSelectChange={this.onSelectChange.bind(this)}
+          ></TableBody>
         </table>
       </div>
     )

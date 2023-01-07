@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
+import TableSelect from '@/components/common/TableSelect'
 
 import './index.scss';
 
 export default class TableBody extends Component {
   render() {
-    const { courseData } = this.props;
+    const { courseData, fieldsData, onSelectChange } = this.props;
     return (
       <tbody>
         {
@@ -30,7 +31,12 @@ export default class TableBody extends Component {
                 </td>
                 <td>{item.studentCount}</td>
                 <td>
-                  {item.fieldTitle}
+                  <TableSelect
+                    fieldsData={fieldsData}
+                    selectIndex={index}
+                    defaultValue={item.fieldTitle}
+                    onSelectChange={onSelectChange}
+                  ></TableSelect>
                 </td>
                 <td>
                   <button className={['btn', item.status ? 'btn-danger' : 'btn-success'].join(' ')}>
