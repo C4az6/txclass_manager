@@ -29,7 +29,6 @@ export default class App extends React.Component {
                   <Route path="/slide" component={SlidePage}></Route>
                   <Route path="/collection" component={CollectionPage}></Route>
                   <Route path="/teacher" component={TeacherPage}></Route>
-                  <Route path="/student" component={StudentPage}></Route>
                   <Route path="/crawler" component={CrawlerPage}></Route>
                   {/* React匹配路由是从上到下的，如果所有的路由都没有匹配到，那么会匹配最后一个没有path的路由，可以把这个路由用来做404*/}
                   <Route component={ErrorPage}></Route>

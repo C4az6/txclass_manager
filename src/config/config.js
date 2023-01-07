@@ -49,10 +49,6 @@ export const NAV = [
     title: '老师管理'   // 老师的上下线,明星老师设置
   },
   {
-    field: 'student',
-    title: '学生管理'   // 学生的上下线
-  },
-  {
     field: 'crawler',
     title: '数据爬取'   // 爬取各种数据
   }
