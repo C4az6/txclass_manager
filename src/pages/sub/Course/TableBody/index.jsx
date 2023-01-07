@@ -5,6 +5,12 @@ import TableSelect from '@/components/common/TableSelect'
 import './index.scss';
 
 export default class TableBody extends Component {
+
+
+  onStatusClick(cid, status, index) {
+    this.props.onStatusClick(index);
+  }
+
   render() {
     const { courseData, fieldsData, onSelectChange } = this.props;
     return (
@@ -39,7 +45,10 @@ export default class TableBody extends Component {
                   ></TableSelect>
                 </td>
                 <td>
-                  <button className={['btn', item.status ? 'btn-danger' : 'btn-success'].join(' ')}>
+                  <button
+                    className={['btn', item.status ? 'btn-danger' : 'btn-success'].join(' ')}
+                    onClick={this.onStatusClick.bind(this, item.cid, item.status, index)}
+                  >
                     {item.status ? '下架' : '上架'}
                   </button>
                 </td>

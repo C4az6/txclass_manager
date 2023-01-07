@@ -71,6 +71,33 @@ export default class Course extends Component {
     }
   }
 
+  async onStatusClick(index) {
+    // 注意：解构赋值是浅拷贝操作
+    const { courseData } = this.state,
+      cid = courseData[index].cid;
+    let status = courseData[index].status
+    switch (status) {
+      case 1:
+        status = 0;
+        courseData[index].status = 0
+        break;
+      case 0:
+        status = 1;
+        courseData[index].status = 1;
+        break;
+      default:
+        break;
+    }
+    this.setState({
+      courseData: this.state.courseData
+    })
+    const response = await courseService.changeCourseStatus({ cid, status });
+    if (response.error_code !== 0) {
+      return alert(response.error_msg);
+    }
+
+  }
+
   componentDidMount() {
     this.getCourseData();
   }
@@ -89,6 +116,7 @@ export default class Course extends Component {
             courseData={courseData}
             fieldsData={fieldsData}
             onSelectChange={this.onSelectChange.bind(this)}
+            onStatusClick={this.onStatusClick.bind(this)}
           ></TableBody>
         </table>
       </div>
