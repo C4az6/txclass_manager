@@ -18,20 +18,4 @@ export default class RecomCourseService extends HTTP {
       })
     })
   }
-
-  changeCourseStatus(data) {
-    return new Promise((resolve, reject) => {
-      this.axiosPost({
-        url: API.RECOM_COURSE.CHANGE_RECOM_COURSE_STATUS,
-        data,
-        success(data) {
-          resolve(data)
-        },
-        error(err) {
-          alert('请求失败!');
-          reject(err)
-        }
-      })
-    })
-  }
 }

@@ -40,7 +40,7 @@ export default class CourseService extends HTTP {
   changeCourseStatus(data) {
     return new Promise((resolve, reject) => {
       this.axiosPost({
-        url: API.COURSE.CHANGE_COURSE_STATUS,
+        url: API.COMMON.CHANGE_STATUS,
         data,
         success(data) {
           resolve(data)

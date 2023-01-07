@@ -5,6 +5,7 @@ import TableHead from '@/components/common/TableHead'
 import TableBody from './TableBody';
 
 import RecomCourseService from '@/services/RecomCourse';
+import CommonService from '@/services/Common.js'
 
 import { RECOM_COURSE_TH } from '@/config/table_config.js'
 
@@ -12,6 +13,7 @@ import { RECOM_COURSE_TH } from '@/config/table_config.js'
 import './index.scss';
 
 const recomCourseService = new RecomCourseService()
+const commonService = new CommonService();
 export default class RecomCourse extends Component {
   state = {
     title: '推荐课程管理',
@@ -53,7 +55,11 @@ export default class RecomCourse extends Component {
       this.setState({
         recomCourseData: this.state.recomCourseData
       }, async function () {
-        const response = await recomCourseService.changeCourseStatus({ cid, status: this.state.recomCourseData[index].status });
+        const response = await commonService.changeStatus({
+          id: cid,
+          status: this.state.recomCourseData[index].status,
+          field: 'recomCourse'
+        });
         console.log("response: ", response);
         const { error_code, error_msg } = response;
         if (error_code !== 0) {
