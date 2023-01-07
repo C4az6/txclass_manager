@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 
 import './index.scss';
 
-export default class TableTh extends Component {
+export default class TableHead extends Component {
   render() {
-    console.log(">>>>>>> ", this.props);
     const { thData } = this.props;
     return (
       <tr>

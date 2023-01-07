@@ -3,7 +3,7 @@ export function trimSpace(str) {
 }
 
 export function getDatas(errorCode, data, history, callback) {
-  if (errorCode === 0 && data && data.length > 0) {
+  if (errorCode === 0 && data) {
     // 接口有数据
     callback();
   } else {

@@ -13,7 +13,9 @@ html,
 body,
 #root,
 .container {
+  min-width: 1200px;
   height: 100%;
+  overflow: hidden;
 }
 
 ul {
@@ -61,12 +63,14 @@ i {
 }
 
 .list-container {
+  min-width: calc(1200px - 220px);
   height: 100%;
   padding: 20px;
 
   .list-table {
     width: 100%;
     margin-top: 10px;
+    text-align: center;
     tr {
       height: 60px;
       &:nth-child(odd) {
@@ -75,6 +79,30 @@ i {
 
       th {
         font-size: 16px;
+      }
+
+      td {
+        img {
+          width: 120px;
+          vertical-align: middle;
+          margin: 10px 0;
+        }
+        a:hover {
+          color: #d9534f;
+          text-decoration: underline;
+        }
+
+        .btn {
+          width: 80px;
+          height: 33px;
+          font-size: 12px;
+        }
+        
+        &.course-name {
+          width: 300px;
+          padding: 0 15px;
+          box-sizing: border-box;
+        }
       }
     }
   }

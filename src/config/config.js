@@ -6,7 +6,8 @@ export const API = {
     LOGOUT_ACTION: BASE_URL + 'admin/logout_action'
   },
   COURSE: {
-    GET_COURSE_DATA: BASE_URL + 'get_courses'
+    GET_COURSE_DATA: BASE_URL + 'get_courses',
+    GET_COURSE_FIELD_DATA: BASE_URL + 'get_course_fields'
   }
 }
 
