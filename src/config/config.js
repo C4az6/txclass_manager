@@ -22,6 +22,9 @@ export const API = {
   TEACHER: {
     GET_TEACHER_DATA: BASE_URL + 'get_teachers'
   },
+  CRAWLER: {
+    CRAWLER_ACTION: BASE_URL + 'crawler/crawl_action'
+  },
   COMMON: {
     CHANGE_STATUS: BASE_URL + 'change_status'
   }

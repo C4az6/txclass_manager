@@ -40,7 +40,7 @@ export default class Teacher extends Component {
       id = teacherData[index].id,
       status = teacherData[index].status;
 
-    const cfm = window.confirm(`确认要${status ? '下架' : '上架'}该课程集合吗?`);
+    const cfm = window.confirm(`确认要${status ? '下架' : '上架'}该讲师吗?`);
     if (cfm) {
       switch (status) {
         case 1:

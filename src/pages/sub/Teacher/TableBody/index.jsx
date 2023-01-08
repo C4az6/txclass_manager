@@ -17,12 +17,10 @@ export default class TableBody extends Component {
           data.map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item.tid}</td>
+                <td>{item.id}</td>
 
                 <td className='course-name'>
-                  <a href={item.href} target="_blank">
-                    {item.teacherName}
-                  </a>
+                  {item.teacherName}
                 </td>
 
                 <td>

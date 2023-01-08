@@ -9,7 +9,6 @@ import RecomCoursePage from './pages/sub/RecomCourse'
 import SlidePage from './pages/sub/Slide'
 import CollectionPage from './pages/sub/Collection'
 import TeacherPage from './pages/sub/Teacher'
-import StudentPage from './pages/sub/Student'
 import CrawlerPage from './pages/sub/Crawler'
 import ErrorPage from './pages/sub/Error'
 
